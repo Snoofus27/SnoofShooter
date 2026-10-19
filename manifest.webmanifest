@@ -1,0 +1,12 @@
+{
+  "name": "SnoofShooter",
+  "short_name": "SnoofShooter",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#12131c",
+  "theme_color": "#12131c",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

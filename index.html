@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SnoofShooter">
+  <meta name="theme-color" content="#12131c">
+  <title>SnoofShooter</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <button id="btn-menu" aria-label="Menu">☰</button>
+      <div id="level-title">SnoofShooter</div>
+      <div class="right">
+        <button id="btn-sound" aria-label="Toggle sound">🔊</button>
+        <button id="btn-restart" aria-label="Restart level">↻</button>
+      </div>
+    </header>
+
+    <div id="stage"><canvas id="canvas"></canvas></div>
+
+    <section id="menu" class="overlay">
+      <div class="panel">
+        <h1>Snoof<span>Shooter</span></h1>
+        <p class="tagline">Tap shooters. Blast blocks. Build the picture.</p>
+        <button id="btn-play" class="big primary">Play</button>
+        <h2>Levels</h2>
+        <div id="level-grid"></div>
+        <details class="howto">
+          <summary>How to play</summary>
+          <ul>
+            <li>Tap the front shooter in any column to send it to the dock.</li>
+            <li>Docked shooters fire at the <b>lowest block</b> in each column that matches their color.</li>
+            <li>The number is its ammo. At 0 it leaves and frees the slot.</li>
+            <li>Clear every block to build the picture. If all 5 slots fill up and nobody can shoot, you lose.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section id="result" class="overlay hidden">
+      <div class="panel">
+        <h2 id="result-title"></h2>
+        <canvas id="result-art"></canvas>
+        <p id="result-text"></p>
+        <div class="row">
+          <button id="btn-result-menu">Menu</button>
+          <button id="btn-result-retry">Retry</button>
+          <button id="btn-result-next" class="primary">Next</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="src/levels.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
